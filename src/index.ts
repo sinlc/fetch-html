@@ -3,7 +3,7 @@ export default {
 		/**
 		 * Replace `remote` with the host you wish to send requests to
 		 */
-		const remote = "https://sites.google.com/view/sinlc";
+		const remote = "https://info.sin.lc";
 
 		return await fetch(remote, request);
 	},
