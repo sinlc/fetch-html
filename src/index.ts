@@ -1,10 +1,11 @@
 export default {
 	async fetch(request: Request): Promise<Response> {
-		/**
-		 * Replace `remote` with the host you wish to send requests to
-		 */
-		const remote = "https://info.sin.lc";
+		// Preserve the requested page and query string when changing the origin.
+		const url = new URL(request.url);
+		url.protocol = "https:";
+		url.hostname = "info.sin.lc";
+		url.port = "";
 
-		return await fetch(remote, request);
+		return fetch(new Request(url.toString(), request));
 	},
 };
